@@ -121,7 +121,7 @@ func (g *Game) Update() error {
 
 	for e := g.sprites.Front(); e != nil; e = e.Next() {
 		s := e.Value.(*sprite)
-		s.update()
+		s.count--
 		if s.terminated() {
 			defer g.sprites.Remove(e)
 		}
